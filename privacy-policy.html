@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Chingu</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --text: #e6edf3;
+            --muted: #8b949e;
+            --accent: #58a6ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 48px 24px;
+        }
+        .container { max-width: 720px; margin: 0 auto; }
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .last-updated {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+        p, li {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+        ul { padding-left: 24px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 32px;
+            font-size: 0.9rem;
+        }
+        footer {
+            border-top: 1px solid #30363d;
+            margin-top: 48px;
+            padding-top: 24px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Chingu</a>
+
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: April 2, 2026</p>
+
+        <p>Chingu ("the App") is an AI-powered language learning application. Your privacy is important to us. This policy explains what data the App collects, how it is used, and your choices.</p>
+
+        <h2>1. Data Stored on Your Device</h2>
+        <p>All of your learning data is stored locally on your device using Apple's SwiftData framework. This includes:</p>
+        <ul>
+            <li>Flashcards, vocabulary, and grammar rules</li>
+            <li>Learning progress, streaks, XP, and skill counters</li>
+            <li>App preferences (language, level, reminder settings)</li>
+        </ul>
+        <p>This data is never uploaded to our servers. We do not have access to it. If you delete the App, this data is permanently removed.</p>
+
+        <h2>2. Data Sent to Third-Party Services</h2>
+        <p>To provide AI-powered features, the App sends certain data to the following third-party services during active use:</p>
+        <ul>
+            <li><strong>Firebase AI (Google Gemini)</strong> — When you use AI features (chat, reading passages, grammar drills, translation grading, etc.), the text you type or speak, along with your selected language and CEFR level, is sent to Google's AI service to generate responses. No personal identifiers are included in these requests.</li>
+            <li><strong>Google Cloud Text-to-Speech</strong> — When you tap a speaker button or use listening exercises, the target-language text is sent to Google's TTS service to generate audio. No personal identifiers are included.</li>
+            <li><strong>Google Cloud Translation</strong> — When you tap a word to see its translation, that word is sent to Google's Translation API. No personal identifiers are included.</li>
+        </ul>
+        <p>These services are governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+
+        <h2>3. Microphone Access</h2>
+        <p>The App requests microphone access for speech recognition during speaking exercises and flashcard pronunciation practice. Audio is processed on-device using Apple's Speech framework. Audio recordings are not stored or transmitted to our servers.</p>
+
+        <h2>4. No Account Required</h2>
+        <p>The App does not require you to create an account, sign in, or provide any personal information such as your name, email address, or phone number.</p>
+
+        <h2>5. No Analytics or Tracking</h2>
+        <p>The App does not use any analytics frameworks, advertising SDKs, or tracking technologies. We do not collect usage statistics, device identifiers, or behavioral data. Firebase Analytics is explicitly disabled in the App's configuration.</p>
+
+        <h2>6. Subscriptions</h2>
+        <p>The App offers optional premium subscriptions managed entirely through Apple's App Store. Payment processing is handled by Apple. We do not have access to your payment information. For subscription management, visit <a href="https://apps.apple.com/account/subscriptions">Apple Subscription Settings</a>.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>The App includes a "Kid Mode" designed for younger learners. We do not knowingly collect personal information from children under 13. Since no account is required and no personal data is collected or stored on our servers, the App is designed to be safe for users of all ages. Text sent to AI services for content generation does not include any personally identifiable information.</p>
+
+        <h2>8. Data Retention</h2>
+        <p>Since all learning data is stored locally on your device, you have full control over it. Deleting the App removes all data. We do not retain any data on remote servers.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have questions about this privacy policy, please contact us at <a href="mailto:support@chinguapp.com">support@chinguapp.com</a>.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Chingu. All rights reserved.</p>
+    </footer>
+</body>
+</html>
