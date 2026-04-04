@@ -105,6 +105,63 @@
             margin: 0 auto;
         }
 
+        .research {
+            background: var(--card);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 32px 28px;
+            margin: 0 0 48px;
+        }
+        .research h2 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+            text-align: center;
+        }
+        .research > .research-intro {
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 28px;
+            line-height: 1.55;
+        }
+        .research-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .research-list li {
+            border-top: 1px solid #30363d;
+            padding: 16px 0 0;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+        .research-list li:first-child {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .research-list strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .research-list a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .research-list a:hover { text-decoration: underline; }
+        .research-list .src {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.85rem;
+            opacity: 0.95;
+        }
+
         footer {
             border-top: 1px solid #30363d;
             padding: 32px 0;
@@ -174,6 +231,58 @@
             <h2>Built on Learning Science</h2>
             <p>Confidence-calibrated metacognitive monitoring, interleaved practice (Daily Mix), self-explanation prompts, and adaptive difficulty — research-backed techniques proven to strengthen long-term retention.</p>
         </div>
+
+        <section class="research" aria-labelledby="research-heading">
+            <h2 id="research-heading">Research foundations</h2>
+            <p class="research-intro">Nuri’s exercises borrow ideas from cognitive science and second-language research. These sources are starting points for reading — they are independent work, not endorsements, and they don’t map one-to-one to every screen in the app.</p>
+            <ul class="research-list">
+                <li>
+                    <strong>Spaced repetition (SRS)</strong>
+                    Spacing study episodes improves long-term retention; optimal gaps depend on how far out you will be tested.
+                    <span class="src">Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., &amp; Rohrer, D. (2006). <a href="https://doi.org/10.1037/0033-2909.132.3.354" target="_blank" rel="noopener noreferrer">Distributed practice in verbal recall tasks: A review and quantitative synthesis</a>. <em>Psychological Bulletin</em>, 132(3), 354–380.</span>
+                </li>
+                <li>
+                    <strong>Mnemonics (keyword imagery)</strong>
+                    Linking a foreign word to a familiar sound-alike and a vivid image can substantially boost vocabulary recall in controlled experiments.
+                    <span class="src">Raugh, M. R., &amp; Atkinson, R. C. (1975). <a href="https://eric.ed.gov/?id=EJ118388" target="_blank" rel="noopener noreferrer">A mnemonic method for learning a second-language vocabulary</a>. <em>Journal of Educational Psychology</em>, 67(1), 1–16.</span>
+                </li>
+                <li>
+                    <strong>Interleaved practice</strong>
+                    Mixing problem types (instead of blocking one type at a time) often helps learners discriminate when to apply each skill — the idea behind varied “Daily Mix” style practice.
+                    <span class="src">Rohrer, D., &amp; Taylor, K. (2007). <a href="https://doi.org/10.1007/s11251-007-9015-8" target="_blank" rel="noopener noreferrer">The shuffling of mathematics problems improves learning</a>. <em>Instructional Science</em>, 35(6), 481–498.</span>
+                </li>
+                <li>
+                    <strong>Self-explanation prompts</strong>
+                    Explaining material to yourself while studying deepens understanding beyond re-reading or copying.
+                    <span class="src">Chi, M. T. H., Bassok, M., Lewis, M. H., Reimann, P., &amp; Glaser, R. (1989). <a href="https://doi.org/10.1207/s15516709cog1302_1" target="_blank" rel="noopener noreferrer">Self-explanations: How students study and use examples in learning to solve problems</a>. <em>Cognitive Science</em>, 13(2), 145–182.</span>
+                </li>
+                <li>
+                    <strong>Adaptive difficulty</strong>
+                    Systems that select the next step based on what you already know (intelligent tutoring / step-based feedback) can approach the benefit of human tutoring in many studies.
+                    <span class="src">VanLehn, K. (2011). <a href="https://doi.org/10.1080/00461520.2011.611369" target="_blank" rel="noopener noreferrer">The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems</a>. <em>Educational Psychologist</em>, 46(4), 197–221.</span>
+                </li>
+                <li>
+                    <strong>Identifying errors (corrective feedback)</strong>
+                    Meta-analyses in SLA find reliable benefits from feedback that helps learners notice and repair their mistakes.
+                    <span class="src">Li, S. (2010). <a href="https://doi.org/10.1111/j.1467-9922.2010.00561.x" target="_blank" rel="noopener noreferrer">The effectiveness of corrective feedback in SLA: A meta-analysis</a>. <em>Language Learning</em>, 60(2), 309–365.</span>
+                </li>
+                <li>
+                    <strong>Phonetic training (minimal pairs / perception)</strong>
+                    High-variability training on contrasting sounds (including minimal-pair style contrasts) can improve non-native perception and, with retention, production.
+                    <span class="src">Bradlow, A. R., Akahane-Yamada, R., Pisoni, D. B., &amp; Tohkura, Y. (1999). <a href="https://doi.org/10.3758/BF03206911" target="_blank" rel="noopener noreferrer">Training Japanese listeners to identify English /r/ and /l/: Long-term retention of learning in perception and production</a>. <em>Perception &amp; Psychophysics</em>, 61(5), 977–985.</span>
+                </li>
+                <li>
+                    <strong>Shadowing</strong>
+                    Listening and repeating in near-real time builds listening, articulatory practice, and monitoring — common in interpreter training and L2 classrooms.
+                    <span class="src">Kadota, S. (2019). <em><a href="https://www.routledge.com/Shadowing-as-a-Practice-in-Second-Language-Acquisition-Connecting-Inputs-and-Outputs/Kadota/p/book/9781138485501" target="_blank" rel="noopener noreferrer">Shadowing as a Practice in Second Language Acquisition</a></em>. Routledge.</span>
+                </li>
+                <li>
+                    <strong>Multimodal retrieval</strong>
+                    Combining words, images, and audio engages separate memory codes (dual coding); actively retrieving material beats restudying alone (retrieval practice).
+                    <span class="src">Clark, J. M., &amp; Paivio, A. (1991). <a href="https://doi.org/10.1007/BF01320076" target="_blank" rel="noopener noreferrer">Dual coding theory and education</a>. <em>Educational Psychology Review</em>, 3(3), 149–210. · Rowland, C. A. (2014). <a href="https://doi.org/10.1037/a0035669" target="_blank" rel="noopener noreferrer">The effect of testing versus restudy on retention: A meta-analytic review of the testing effect</a>. <em>Psychological Bulletin</em>, 140(6), 1432–1463.</span>
+                </li>
+            </ul>
+        </section>
     </div>
 
     <footer>
