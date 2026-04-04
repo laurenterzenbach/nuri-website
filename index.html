@@ -155,11 +155,22 @@
             text-decoration: none;
         }
         .research-list a:hover { text-decoration: underline; }
-        .research-list .src {
-            display: block;
-            margin-top: 8px;
-            font-size: 0.85rem;
-            opacity: 0.95;
+        .research-list .topic-desc {
+            margin: 0;
+        }
+        .research-list .refs {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .research-list .ref {
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--muted);
+            margin: 0;
+            padding-left: 12px;
+            border-left: 2px solid #21262d;
         }
 
         footer {
@@ -234,52 +245,94 @@
 
         <section class="research" aria-labelledby="research-heading">
             <h2 id="research-heading">Research foundations</h2>
-            <p class="research-intro">Nuri’s exercises borrow ideas from cognitive science and second-language research. These sources are starting points for reading — they are independent work, not endorsements, and they don’t map one-to-one to every screen in the app.</p>
+            <p class="research-intro">Nuri’s exercises borrow ideas from cognitive science and second-language research. Below is a curated (not exhaustive) reading list — independent work, not endorsements, and not a one-to-one map to every screen in the app.</p>
             <ul class="research-list">
                 <li>
-                    <strong>Spaced repetition (SRS)</strong>
-                    Spacing study episodes improves long-term retention; optimal gaps depend on how far out you will be tested.
-                    <span class="src">Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., &amp; Rohrer, D. (2006). <a href="https://doi.org/10.1037/0033-2909.132.3.354" target="_blank" rel="noopener noreferrer">Distributed practice in verbal recall tasks: A review and quantitative synthesis</a>. <em>Psychological Bulletin</em>, 132(3), 354–380.</span>
+                    <strong>Spaced repetition (SRS) &amp; distributed practice</strong>
+                    <p class="topic-desc">Spacing reviews in time improves durable retention; the “testing effect” shows retrieval practice also strengthens memory — both are common SRS ingredients.</p>
+                    <div class="refs">
+                        <p class="ref">Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., &amp; Rohrer, D. (2006). <a href="https://doi.org/10.1037/0033-2909.132.3.354" target="_blank" rel="noopener noreferrer">Distributed practice in verbal recall tasks: A review and quantitative synthesis</a>. <em>Psychological Bulletin</em>, 132(3), 354–380.</p>
+                        <p class="ref">Karpicke, J. D., &amp; Roediger, H. L., III. (2008). <a href="https://doi.org/10.1126/science.1152408" target="_blank" rel="noopener noreferrer">The critical importance of retrieval for learning</a>. <em>Science</em>, 319(5865), 966–968.</p>
+                        <p class="ref">Roediger, H. L., III, &amp; Karpicke, J. D. (2006). <a href="https://doi.org/10.1016/S0079-7421(06)17011-3" target="_blank" rel="noopener noreferrer">Test-enhanced learning: Taking memory tests improves long-term retention</a>. <em>Psychology of Learning and Motivation</em>, 47, 1–36.</p>
+                        <p class="ref">Delaney, P. F., Verkoeijen, P. P. J. L., &amp; Spirgel, A. (2010). <a href="https://doi.org/10.1016/S0079-7421(10)53003-2" target="_blank" rel="noopener noreferrer">Spacing and testing effects: A deeply critical, lengthy, and at times discursive review of the literature</a>. <em>Psychology of Learning and Motivation</em>, 53, 63–147.</p>
+                    </div>
                 </li>
                 <li>
-                    <strong>Mnemonics (keyword imagery)</strong>
-                    Linking a foreign word to a familiar sound-alike and a vivid image can substantially boost vocabulary recall in controlled experiments.
-                    <span class="src">Raugh, M. R., &amp; Atkinson, R. C. (1975). <a href="https://eric.ed.gov/?id=EJ118388" target="_blank" rel="noopener noreferrer">A mnemonic method for learning a second-language vocabulary</a>. <em>Journal of Educational Psychology</em>, 67(1), 1–16.</span>
+                    <strong>Mnemonics (keyword &amp; imagery)</strong>
+                    <p class="topic-desc">Sound-alike “keywords” plus interactive imagery remain one of the best-supported vocabulary mnemonics in classroom-oriented reviews.</p>
+                    <div class="refs">
+                        <p class="ref">Raugh, M. R., &amp; Atkinson, R. C. (1975). <a href="https://eric.ed.gov/?id=EJ118388" target="_blank" rel="noopener noreferrer">A mnemonic method for learning a second-language vocabulary</a>. <em>Journal of Educational Psychology</em>, 67(1), 1–16.</p>
+                        <p class="ref">Pressley, M., Levin, J. R., &amp; Delaney, H. D. (1982). <a href="https://doi.org/10.3102/00346543052001061" target="_blank" rel="noopener noreferrer">The mnemonic keyword method</a>. <em>Review of Educational Research</em>, 52(1), 61–91.</p>
+                    </div>
                 </li>
                 <li>
                     <strong>Interleaved practice</strong>
-                    Mixing problem types (instead of blocking one type at a time) often helps learners discriminate when to apply each skill — the idea behind varied “Daily Mix” style practice.
-                    <span class="src">Rohrer, D., &amp; Taylor, K. (2007). <a href="https://doi.org/10.1007/s11251-007-9015-8" target="_blank" rel="noopener noreferrer">The shuffling of mathematics problems improves learning</a>. <em>Instructional Science</em>, 35(6), 481–498.</span>
+                    <p class="topic-desc">Mixing categories or problem types (vs. blocking) supports inductive learning and discrimination; effects depend on material similarity and design.</p>
+                    <div class="refs">
+                        <p class="ref">Rohrer, D., &amp; Taylor, K. (2007). <a href="https://doi.org/10.1007/s11251-007-9015-8" target="_blank" rel="noopener noreferrer">The shuffling of mathematics problems improves learning</a>. <em>Instructional Science</em>, 35(6), 481–498.</p>
+                        <p class="ref">Kornell, N., &amp; Bjork, R. A. (2008). <a href="https://doi.org/10.1111/j.1467-9280.2008.02127.x" target="_blank" rel="noopener noreferrer">Learning concepts and categories: Is spacing the “enemy of induction”?</a> <em>Psychological Science</em>, 19(6), 585–592.</p>
+                        <p class="ref">Brunmair, M., &amp; Richter, T. (2019). <a href="https://doi.org/10.1037/bul0000209" target="_blank" rel="noopener noreferrer">Similarity matters: A meta-analysis of interleaved learning and its moderators</a>. <em>Psychological Bulletin</em>, 145(11), 1029–1052.</p>
+                    </div>
                 </li>
                 <li>
-                    <strong>Self-explanation prompts</strong>
-                    Explaining material to yourself while studying deepens understanding beyond re-reading or copying.
-                    <span class="src">Chi, M. T. H., Bassok, M., Lewis, M. H., Reimann, P., &amp; Glaser, R. (1989). <a href="https://doi.org/10.1207/s15516709cog1302_1" target="_blank" rel="noopener noreferrer">Self-explanations: How students study and use examples in learning to solve problems</a>. <em>Cognitive Science</em>, 13(2), 145–182.</span>
+                    <strong>Self-explanation</strong>
+                    <p class="topic-desc">Prompting learners to explain examples or text while studying improves understanding and transfer in many domains.</p>
+                    <div class="refs">
+                        <p class="ref">Chi, M. T. H., Bassok, M., Lewis, M. H., Reimann, P., &amp; Glaser, R. (1989). <a href="https://doi.org/10.1207/s15516709cog1302_1" target="_blank" rel="noopener noreferrer">Self-explanations: How students study and use examples in learning to solve problems</a>. <em>Cognitive Science</em>, 13(2), 145–182.</p>
+                        <p class="ref">Chi, M. T. H., De Leeuw, N., Chiu, M.-H., &amp; Lavancher, C. (1994). <a href="https://doi.org/10.1207/s15516709cog1803_3" target="_blank" rel="noopener noreferrer">Eliciting self-explanations improves understanding</a>. <em>Cognitive Science</em>, 18(3), 439–477.</p>
+                    </div>
                 </li>
                 <li>
-                    <strong>Adaptive difficulty</strong>
-                    Systems that select the next step based on what you already know (intelligent tutoring / step-based feedback) can approach the benefit of human tutoring in many studies.
-                    <span class="src">VanLehn, K. (2011). <a href="https://doi.org/10.1080/00461520.2011.611369" target="_blank" rel="noopener noreferrer">The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems</a>. <em>Educational Psychologist</em>, 46(4), 197–221.</span>
+                    <strong>Metacognitive monitoring &amp; confidence</strong>
+                    <p class="topic-desc">Judgments of what you know (and calibrating them) are central to self-regulated study; related work informs confidence-based scheduling ideas.</p>
+                    <div class="refs">
+                        <p class="ref">Koriat, A., &amp; Goldsmith, M. (1996). <a href="https://doi.org/10.1037/0033-295X.103.3.490" target="_blank" rel="noopener noreferrer">Monitoring and control processes in the strategic regulation of memory accuracy</a>. <em>Psychological Review</em>, 103(3), 490–517.</p>
+                    </div>
                 </li>
                 <li>
-                    <strong>Identifying errors (corrective feedback)</strong>
-                    Meta-analyses in SLA find reliable benefits from feedback that helps learners notice and repair their mistakes.
-                    <span class="src">Li, S. (2010). <a href="https://doi.org/10.1111/j.1467-9922.2010.00561.x" target="_blank" rel="noopener noreferrer">The effectiveness of corrective feedback in SLA: A meta-analysis</a>. <em>Language Learning</em>, 60(2), 309–365.</span>
+                    <strong>Adaptive difficulty &amp; intelligent tutoring</strong>
+                    <p class="topic-desc">Tracking mastery over skills and choosing the next exercise accordingly is the backbone of many adaptive tutors and mastery-style systems.</p>
+                    <div class="refs">
+                        <p class="ref">Corbett, A. T., &amp; Anderson, J. R. (1995). <a href="https://doi.org/10.1007/BF01099821" target="_blank" rel="noopener noreferrer">Knowledge tracing: Modeling the acquisition of procedural knowledge</a>. <em>User Modeling and User-Adapted Interaction</em>, 4(4), 253–278.</p>
+                        <p class="ref">VanLehn, K. (2011). <a href="https://doi.org/10.1080/00461520.2011.611369" target="_blank" rel="noopener noreferrer">The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems</a>. <em>Educational Psychologist</em>, 46(4), 197–221.</p>
+                        <p class="ref">Aleven, V., McLaren, B. M., Sewall, J., &amp; Koedinger, K. R. (2009). <a href="https://eric.ed.gov/?id=EJ902546" target="_blank" rel="noopener noreferrer">A new paradigm for intelligent tutoring systems: Example-tracing tutors</a>. <em>International Journal of Artificial Intelligence in Education</em>, 19(2), 105–154.</p>
+                    </div>
                 </li>
                 <li>
-                    <strong>Phonetic training (minimal pairs / perception)</strong>
-                    High-variability training on contrasting sounds (including minimal-pair style contrasts) can improve non-native perception and, with retention, production.
-                    <span class="src">Bradlow, A. R., Akahane-Yamada, R., Pisoni, D. B., &amp; Tohkura, Y. (1999). <a href="https://doi.org/10.3758/BF03206911" target="_blank" rel="noopener noreferrer">Training Japanese listeners to identify English /r/ and /l/: Long-term retention of learning in perception and production</a>. <em>Perception &amp; Psychophysics</em>, 61(5), 977–985.</span>
+                    <strong>Identifying errors &amp; corrective feedback (SLA)</strong>
+                    <p class="topic-desc">Meta-analyses and reviews generally find benefits when learners receive feedback that helps them notice and revise linguistic forms.</p>
+                    <div class="refs">
+                        <p class="ref">Russell, J., &amp; Spada, N. (2006). The effectiveness of corrective feedback for the acquisition of L2 grammar: A meta-analysis of the research. In J. M. Norris &amp; L. Ortega (Eds.), <em>Synthesizing research on language learning and teaching</em> (pp. 133–164). John Benjamins. <a href="https://benjamins.com/catalog/lllt.13" target="_blank" rel="noopener noreferrer">Volume information</a>.</p>
+                        <p class="ref">Li, S. (2010). <a href="https://doi.org/10.1111/j.1467-9922.2010.00561.x" target="_blank" rel="noopener noreferrer">The effectiveness of corrective feedback in SLA: A meta-analysis</a>. <em>Language Learning</em>, 60(2), 309–365.</p>
+                        <p class="ref">Lyster, R., Saito, K., &amp; Sato, M. (2013). <a href="https://doi.org/10.1017/S0261444812000365" target="_blank" rel="noopener noreferrer">Oral corrective feedback in second language classrooms</a>. <em>Language Teaching</em>, 46(1), 1–40.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Phonetic training &amp; sound contrasts (minimal pairs / high variability)</strong>
+                    <p class="topic-desc">Laboratory training on difficult contrasts, with variability across talkers and contexts, supports adult L2 speech perception and can transfer toward production.</p>
+                    <div class="refs">
+                        <p class="ref">Lively, S. E., Logan, J. S., &amp; Pisoni, D. B. (1993). <a href="https://doi.org/10.1121/1.408177" target="_blank" rel="noopener noreferrer">Training Japanese listeners to identify English /r/ and /l/. II: The role of phonetic environment and talker variability in learning new perceptual categories</a>. <em>Journal of the Acoustical Society of America</em>, 94(3), 1242–1256.</p>
+                        <p class="ref">McCandliss, B. D., Fiez, J. A., Protopapas, A., Conway, M., &amp; McClelland, J. L. (2002). <a href="https://doi.org/10.3758/CABN.2.2.89" target="_blank" rel="noopener noreferrer">Success and failure in teaching the [r]-[l] contrast to Japanese adults: Tests of a Hebbian model of plasticity and stabilization in spoken language perception</a>. <em>Cognitive, Affective, &amp; Behavioral Neuroscience</em>, 2(2), 89–108.</p>
+                        <p class="ref">Bradlow, A. R., Akahane-Yamada, R., Pisoni, D. B., &amp; Tohkura, Y. (1999). <a href="https://doi.org/10.3758/BF03206911" target="_blank" rel="noopener noreferrer">Training Japanese listeners to identify English /r/ and /l/: Long-term retention of learning in perception and production</a>. <em>Perception &amp; Psychophysics</em>, 61(5), 977–985.</p>
+                    </div>
                 </li>
                 <li>
                     <strong>Shadowing</strong>
-                    Listening and repeating in near-real time builds listening, articulatory practice, and monitoring — common in interpreter training and L2 classrooms.
-                    <span class="src">Kadota, S. (2019). <em><a href="https://www.routledge.com/Shadowing-as-a-Practice-in-Second-Language-Acquisition-Connecting-Inputs-and-Outputs/Kadota/p/book/9781138485501" target="_blank" rel="noopener noreferrer">Shadowing as a Practice in Second Language Acquisition</a></em>. Routledge.</span>
+                    <p class="topic-desc">Simultaneous listen-and-repeat practice is widely used in L2 listening and pronunciation work; empirical studies report gains especially for lower-level learners.</p>
+                    <div class="refs">
+                        <p class="ref">Hamada, Y. (2016). <a href="https://doi.org/10.1177/1362168815597504" target="_blank" rel="noopener noreferrer">Shadowing: Who benefits and how? Uncovering a booming EFL teaching technique for listening comprehension</a>. <em>Language Teaching Research</em>, 20(1), 35–52.</p>
+                        <p class="ref">Kadota, S. (2019). <em><a href="https://www.routledge.com/Shadowing-as-a-Practice-in-Second-Language-Acquisition-Connecting-Inputs-and-Outputs/Kadota/p/book/9781138485501" target="_blank" rel="noopener noreferrer">Shadowing as a Practice in Second Language Acquisition</a></em>. Routledge.</p>
+                    </div>
                 </li>
                 <li>
-                    <strong>Multimodal retrieval</strong>
-                    Combining words, images, and audio engages separate memory codes (dual coding); actively retrieving material beats restudying alone (retrieval practice).
-                    <span class="src">Clark, J. M., &amp; Paivio, A. (1991). <a href="https://doi.org/10.1007/BF01320076" target="_blank" rel="noopener noreferrer">Dual coding theory and education</a>. <em>Educational Psychology Review</em>, 3(3), 149–210. · Rowland, C. A. (2014). <a href="https://doi.org/10.1037/a0035669" target="_blank" rel="noopener noreferrer">The effect of testing versus restudy on retention: A meta-analytic review of the testing effect</a>. <em>Psychological Bulletin</em>, 140(6), 1432–1463.</span>
+                    <strong>Multimodal learning, dual coding &amp; retrieval</strong>
+                    <p class="topic-desc">Combining verbal and pictorial (or auditory) channels, while managing cognitive load, supports comprehension; retrieval practice further boosts durable memory.</p>
+                    <div class="refs">
+                        <p class="ref">Clark, J. M., &amp; Paivio, A. (1991). <a href="https://doi.org/10.1007/BF01320076" target="_blank" rel="noopener noreferrer">Dual coding theory and education</a>. <em>Educational Psychology Review</em>, 3(3), 149–210.</p>
+                        <p class="ref">Mayer, R. E. (2003). <a href="https://doi.org/10.1016/S0959-4752(02)00016-6" target="_blank" rel="noopener noreferrer">The promise of multimedia learning: Using the same instructional design methods across different media</a>. <em>Learning and Instruction</em>, 13(2), 125–139.</p>
+                        <p class="ref">Sweller, J. (1988). <a href="https://doi.org/10.1016/0010-0285(88)90023-7" target="_blank" rel="noopener noreferrer">Cognitive load during problem solving: Effects on learning</a>. <em>Cognitive Science</em>, 12(2), 257–285.</p>
+                        <p class="ref">Rowland, C. A. (2014). <a href="https://doi.org/10.1037/a0035669" target="_blank" rel="noopener noreferrer">The effect of testing versus restudy on retention: A meta-analytic review of the testing effect</a>. <em>Psychological Bulletin</em>, 140(6), 1432–1463.</p>
+                    </div>
                 </li>
             </ul>
         </section>
