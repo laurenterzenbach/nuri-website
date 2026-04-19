@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuri — AI Language Companion · Misfit Mafia</title>
+    <meta name="description" content="Nuri is an AI language companion for iPhone and iPad. Learn any of 11 languages with an AI tutor that adapts to your level. Made by Misfit Mafia, LLC.">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --text: #e6edf3;
+            --muted: #8b949e;
+            --accent: #58a6ff;
+            --green: #3fb950;
+            --purple: #bc8cff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            text-align: center;
+            padding: 80px 24px 48px;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+        header h1 span { color: var(--accent); }
+        header .subtitle {
+            font-size: 1.25rem;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+        header .tagline {
+            font-size: 1.1rem;
+            color: var(--text);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 32px auto;
+            max-width: 600px;
+        }
+        .lang-badge {
+            background: var(--card);
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 48px 0;
+        }
+        .feature-card {
+            background: var(--card);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .feature-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .science {
+            background: var(--card);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 32px;
+            margin: 24px 0 48px;
+            text-align: center;
+        }
+        .science h2 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: var(--purple);
+        }
+        .science p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .research {
+            background: var(--card);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 32px 28px;
+            margin: 0 0 48px;
+        }
+        .research h2 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+            text-align: center;
+        }
+        .research > .research-intro {
+            font-size: 0.9rem;
+            color: var(--muted);
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 28px;
+            line-height: 1.55;
+        }
+        .research-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .research-list li {
+            border-top: 1px solid #30363d;
+            padding: 16px 0 0;
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+        .research-list li:first-child {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .research-list strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .research-list a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .research-list a:hover { text-decoration: underline; }
+        .research-list .topic-desc {
+            margin: 0;
+        }
+        .research-list .refs {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .research-list .ref {
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--muted);
+            margin: 0;
+            padding-left: 12px;
+            border-left: 2px solid #21262d;
+        }
+
+        footer {
+            border-top: 1px solid #30363d;
+            padding: 32px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        footer a:hover { text-decoration: underline; }
+        .footer-links { margin-bottom: 12px; }
+        .footer-links a { margin: 0 12px; }
+        .footer-meta { font-size: 0.8rem; line-height: 1.6; }
+
+        .breadcrumb {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 24px 0;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav class="breadcrumb"><a href="index.html">← Misfit Mafia</a></nav>
+    <header>
+        <h1><span>Nuri</span> 누리</h1>
+        <p class="subtitle">AI Language Companion</p>
+        <p class="tagline">Learn any of 11 languages with an AI tutor that adapts to your level — from absolute beginner to advanced.</p>
+    </header>
+
+    <div class="container">
+        <div class="languages">
+            <span class="lang-badge">Arabic</span>
+            <span class="lang-badge">Cantonese</span>
+            <span class="lang-badge">Chinese (Mandarin)</span>
+            <span class="lang-badge">Farsi</span>
+            <span class="lang-badge">French</span>
+            <span class="lang-badge">Hindi</span>
+            <span class="lang-badge">Japanese</span>
+            <span class="lang-badge">Korean</span>
+            <span class="lang-badge">Russian</span>
+            <span class="lang-badge">Spanish</span>
+            <span class="lang-badge">Vietnamese</span>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>AI Conversation Tutor</h3>
+                <p>Open Ask your AI tutor from the dashboard anytime. Get real back-and-forth that adapts grammar to your CEFR level and practices rules you've studied.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Handwriting Practice</h3>
+                <p>Write characters and words with ghost-text guides. Vision OCR grades each stroke in real time.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Six Skill Labs</h3>
+                <p>Reading, Writing, Listening, Speaking, Grammar, and Vocabulary — each with multiple exercise modes.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Spaced Repetition</h3>
+                <p>SRS flashcards with confidence-based scheduling. Daily Mix interleaves vocab, grammar, and translation in one session for stronger retention.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Adaptive Difficulty</h3>
+                <p>Grammar drills scale based on your streaks and confidence. The app meets you where you are.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Two Learning Modes</h3>
+                <p>Gamify mode — XP, levels, streaks, badges, daily challenges, and mascot avatars. Study mode — clean, focused learning without gamification.</p>
+            </div>
+        </div>
+
+        <div class="science">
+            <h2>Built on Learning Science</h2>
+            <p>Confidence-calibrated metacognitive monitoring, interleaved practice (Daily Mix), self-explanation prompts, and adaptive difficulty — research-backed techniques proven to strengthen long-term retention.</p>
+        </div>
+
+        <section class="research" aria-labelledby="research-heading">
+            <h2 id="research-heading">Research foundations</h2>
+            <p class="research-intro">Nuri’s exercises borrow ideas from cognitive science and second-language research. Below is a curated (not exhaustive) reading list — independent work, not endorsements, and not a one-to-one map to every screen in the app.</p>
+            <ul class="research-list">
+                <li>
+                    <strong>Spaced repetition (SRS) &amp; distributed practice</strong>
+                    <p class="topic-desc">Spacing reviews in time improves durable retention; the “testing effect” shows retrieval practice also strengthens memory — both are common SRS ingredients.</p>
+                    <div class="refs">
+                        <p class="ref">Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., &amp; Rohrer, D. (2006). <a href="https://doi.org/10.1037/0033-2909.132.3.354" target="_blank" rel="noopener noreferrer">Distributed practice in verbal recall tasks: A review and quantitative synthesis</a>. <em>Psychological Bulletin</em>, 132(3), 354–380.</p>
+                        <p class="ref">Karpicke, J. D., &amp; Roediger, H. L., III. (2008). <a href="https://doi.org/10.1126/science.1152408" target="_blank" rel="noopener noreferrer">The critical importance of retrieval for learning</a>. <em>Science</em>, 319(5865), 966–968.</p>
+                        <p class="ref">Roediger, H. L., III, &amp; Karpicke, J. D. (2006). <a href="https://doi.org/10.1016/S0079-7421(06)17011-3" target="_blank" rel="noopener noreferrer">Test-enhanced learning: Taking memory tests improves long-term retention</a>. <em>Psychology of Learning and Motivation</em>, 47, 1–36.</p>
+                        <p class="ref">Delaney, P. F., Verkoeijen, P. P. J. L., &amp; Spirgel, A. (2010). <a href="https://doi.org/10.1016/S0079-7421(10)53003-2" target="_blank" rel="noopener noreferrer">Spacing and testing effects: A deeply critical, lengthy, and at times discursive review of the literature</a>. <em>Psychology of Learning and Motivation</em>, 53, 63–147.</p>
+                        <p class="ref">Pan, S. C., &amp; Rickard, T. C. (2018). <a href="https://doi.org/10.1037/bul0000151" target="_blank" rel="noopener noreferrer">Transfer of test-enhanced learning: Meta-analytic review and synthesis</a>. <em>Psychological Bulletin</em>, 144(7), 710–756.</p>
+                        <p class="ref">Pan, S. C., &amp; Rickard, T. C. (2017). <a href="https://doi.org/10.1037/xap0000124" target="_blank" rel="noopener noreferrer">Does retrieval practice enhance learning and transfer relative to restudy for term-definition facts?</a> <em>Journal of Experimental Psychology: Applied</em>, 23(3), 278–292.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Mnemonics (keyword &amp; imagery)</strong>
+                    <p class="topic-desc">Sound-alike “keywords” plus interactive imagery remain one of the best-supported vocabulary mnemonics in classroom-oriented reviews.</p>
+                    <div class="refs">
+                        <p class="ref">Raugh, M. R., &amp; Atkinson, R. C. (1975). <a href="https://eric.ed.gov/?id=EJ118388" target="_blank" rel="noopener noreferrer">A mnemonic method for learning a second-language vocabulary</a>. <em>Journal of Educational Psychology</em>, 67(1), 1–16.</p>
+                        <p class="ref">Pressley, M., Levin, J. R., &amp; Delaney, H. D. (1982). <a href="https://doi.org/10.3102/00346543052001061" target="_blank" rel="noopener noreferrer">The mnemonic keyword method</a>. <em>Review of Educational Research</em>, 52(1), 61–91.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Interleaved practice</strong>
+                    <p class="topic-desc">Mixing categories or problem types (vs. blocking) supports inductive learning and discrimination; effects depend on material similarity and design.</p>
+                    <div class="refs">
+                        <p class="ref">Rohrer, D., &amp; Taylor, K. (2007). <a href="https://doi.org/10.1007/s11251-007-9015-8" target="_blank" rel="noopener noreferrer">The shuffling of mathematics problems improves learning</a>. <em>Instructional Science</em>, 35(6), 481–498.</p>
+                        <p class="ref">Kornell, N., &amp; Bjork, R. A. (2008). <a href="https://doi.org/10.1111/j.1467-9280.2008.02127.x" target="_blank" rel="noopener noreferrer">Learning concepts and categories: Is spacing the “enemy of induction”?</a> <em>Psychological Science</em>, 19(6), 585–592.</p>
+                        <p class="ref">Brunmair, M., &amp; Richter, T. (2019). <a href="https://doi.org/10.1037/bul0000209" target="_blank" rel="noopener noreferrer">Similarity matters: A meta-analysis of interleaved learning and its moderators</a>. <em>Psychological Bulletin</em>, 145(11), 1029–1052.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Self-explanation</strong>
+                    <p class="topic-desc">Prompting learners to explain examples or text while studying improves understanding and transfer in many domains.</p>
+                    <div class="refs">
+                        <p class="ref">Chi, M. T. H., Bassok, M., Lewis, M. H., Reimann, P., &amp; Glaser, R. (1989). <a href="https://doi.org/10.1207/s15516709cog1302_1" target="_blank" rel="noopener noreferrer">Self-explanations: How students study and use examples in learning to solve problems</a>. <em>Cognitive Science</em>, 13(2), 145–182.</p>
+                        <p class="ref">Chi, M. T. H., De Leeuw, N., Chiu, M.-H., &amp; Lavancher, C. (1994). <a href="https://doi.org/10.1207/s15516709cog1803_3" target="_blank" rel="noopener noreferrer">Eliciting self-explanations improves understanding</a>. <em>Cognitive Science</em>, 18(3), 439–477.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Metacognitive monitoring &amp; confidence</strong>
+                    <p class="topic-desc">Judgments of what you know (and calibrating them) are central to self-regulated study; related work informs confidence-based scheduling ideas.</p>
+                    <div class="refs">
+                        <p class="ref">Koriat, A., &amp; Goldsmith, M. (1996). <a href="https://doi.org/10.1037/0033-295X.103.3.490" target="_blank" rel="noopener noreferrer">Monitoring and control processes in the strategic regulation of memory accuracy</a>. <em>Psychological Review</em>, 103(3), 490–517.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Adaptive difficulty &amp; intelligent tutoring</strong>
+                    <p class="topic-desc">Tracking mastery over skills and choosing the next exercise accordingly is the backbone of many adaptive tutors and mastery-style systems.</p>
+                    <div class="refs">
+                        <p class="ref">Corbett, A. T., &amp; Anderson, J. R. (1995). <a href="https://doi.org/10.1007/BF01099821" target="_blank" rel="noopener noreferrer">Knowledge tracing: Modeling the acquisition of procedural knowledge</a>. <em>User Modeling and User-Adapted Interaction</em>, 4(4), 253–278.</p>
+                        <p class="ref">VanLehn, K. (2011). <a href="https://doi.org/10.1080/00461520.2011.611369" target="_blank" rel="noopener noreferrer">The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems</a>. <em>Educational Psychologist</em>, 46(4), 197–221.</p>
+                        <p class="ref">Aleven, V., McLaren, B. M., Sewall, J., &amp; Koedinger, K. R. (2009). <a href="https://eric.ed.gov/?id=EJ902546" target="_blank" rel="noopener noreferrer">A new paradigm for intelligent tutoring systems: Example-tracing tutors</a>. <em>International Journal of Artificial Intelligence in Education</em>, 19(2), 105–154.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Identifying errors &amp; corrective feedback (SLA)</strong>
+                    <p class="topic-desc">Meta-analyses and reviews generally find benefits when learners receive feedback that helps them notice and revise linguistic forms.</p>
+                    <div class="refs">
+                        <p class="ref">Russell, J., &amp; Spada, N. (2006). The effectiveness of corrective feedback for the acquisition of L2 grammar: A meta-analysis of the research. In J. M. Norris &amp; L. Ortega (Eds.), <em>Synthesizing research on language learning and teaching</em> (pp. 133–164). John Benjamins. <a href="https://benjamins.com/catalog/lllt.13" target="_blank" rel="noopener noreferrer">Volume information</a>.</p>
+                        <p class="ref">Li, S. (2010). <a href="https://doi.org/10.1111/j.1467-9922.2010.00561.x" target="_blank" rel="noopener noreferrer">The effectiveness of corrective feedback in SLA: A meta-analysis</a>. <em>Language Learning</em>, 60(2), 309–365.</p>
+                        <p class="ref">Lyster, R., Saito, K., &amp; Sato, M. (2013). <a href="https://doi.org/10.1017/S0261444812000365" target="_blank" rel="noopener noreferrer">Oral corrective feedback in second language classrooms</a>. <em>Language Teaching</em>, 46(1), 1–40.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>L2 instruction effectiveness &amp; research synthesis</strong>
+                    <p class="topic-desc">Large-scale syntheses ask how much second-language instruction helps overall, and how to aggregate evidence across studies — complementary to cognitive lab work on memory.</p>
+                    <div class="refs">
+                        <p class="ref">Norris, J. M., &amp; Ortega, L. (2000). <a href="https://doi.org/10.1111/0023-8333.00136" target="_blank" rel="noopener noreferrer">Effectiveness of L2 instruction: A research synthesis and quantitative meta-analysis</a>. <em>Language Learning</em>, 50(3), 417–528.</p>
+                        <p class="ref">Norris, J. M., &amp; Ortega, L. (Eds.). (2006). <em>Synthesizing research on language learning and teaching</em>. John Benjamins. <a href="https://benjamins.com/catalog/lllt.13" target="_blank" rel="noopener noreferrer">Book information</a> (includes meta-analytic chapters such as Russell &amp; Spada on corrective feedback).</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Phonetic training &amp; sound contrasts (minimal pairs / high variability)</strong>
+                    <p class="topic-desc">Laboratory training on difficult contrasts, with variability across talkers and contexts, supports adult L2 speech perception and can transfer toward production.</p>
+                    <div class="refs">
+                        <p class="ref">Lively, S. E., Logan, J. S., &amp; Pisoni, D. B. (1993). <a href="https://doi.org/10.1121/1.408177" target="_blank" rel="noopener noreferrer">Training Japanese listeners to identify English /r/ and /l/. II: The role of phonetic environment and talker variability in learning new perceptual categories</a>. <em>Journal of the Acoustical Society of America</em>, 94(3), 1242–1256.</p>
+                        <p class="ref">McCandliss, B. D., Fiez, J. A., Protopapas, A., Conway, M., &amp; McClelland, J. L. (2002). <a href="https://doi.org/10.3758/CABN.2.2.89" target="_blank" rel="noopener noreferrer">Success and failure in teaching the [r]-[l] contrast to Japanese adults: Tests of a Hebbian model of plasticity and stabilization in spoken language perception</a>. <em>Cognitive, Affective, &amp; Behavioral Neuroscience</em>, 2(2), 89–108.</p>
+                        <p class="ref">Bradlow, A. R., Akahane-Yamada, R., Pisoni, D. B., &amp; Tohkura, Y. (1999). <a href="https://doi.org/10.3758/BF03206911" target="_blank" rel="noopener noreferrer">Training Japanese listeners to identify English /r/ and /l/: Long-term retention of learning in perception and production</a>. <em>Perception &amp; Psychophysics</em>, 61(5), 977–985.</p>
+                        <p class="ref">Iverson, P., &amp; Kuhl, P. K. (1995). <a href="https://doi.org/10.1121/1.412280" target="_blank" rel="noopener noreferrer">Mapping the perceptual magnet effect for speech using signal detection theory and multidimensional scaling</a>. <em>Journal of the Acoustical Society of America</em>, 97(1), 553–562.</p>
+                        <p class="ref">Samuel, A. G., &amp; Kraljic, T. (2009). <a href="https://doi.org/10.3758/APP.71.6.1207" target="_blank" rel="noopener noreferrer">Perceptual learning for speech</a>. <em>Attention, Perception, &amp; Psychophysics</em>, 71(6), 1207–1218.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Shadowing</strong>
+                    <p class="topic-desc">Simultaneous listen-and-repeat practice is widely used in L2 listening and pronunciation work; empirical studies report gains especially for lower-level learners.</p>
+                    <div class="refs">
+                        <p class="ref">Hamada, Y. (2016). <a href="https://doi.org/10.1177/1362168815597504" target="_blank" rel="noopener noreferrer">Shadowing: Who benefits and how? Uncovering a booming EFL teaching technique for listening comprehension</a>. <em>Language Teaching Research</em>, 20(1), 35–52.</p>
+                        <p class="ref">Kadota, S. (2019). <em><a href="https://www.routledge.com/Shadowing-as-a-Practice-in-Second-Language-Acquisition-Connecting-Inputs-and-Outputs/Kadota/p/book/9781138485501" target="_blank" rel="noopener noreferrer">Shadowing as a Practice in Second Language Acquisition</a></em>. Routledge.</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Multimodal learning, dual coding &amp; retrieval</strong>
+                    <p class="topic-desc">Combining verbal and pictorial (or auditory) channels, while managing cognitive load, supports comprehension; retrieval practice further boosts durable memory.</p>
+                    <div class="refs">
+                        <p class="ref">Mayer, R. E. (Ed.). (2021). <em><a href="https://doi.org/10.1017/9781108894333" target="_blank" rel="noopener noreferrer">The Cambridge Handbook of Multimedia Learning</a></em> (3rd ed.). Cambridge University Press.</p>
+                        <p class="ref">Clark, J. M., &amp; Paivio, A. (1991). <a href="https://doi.org/10.1007/BF01320076" target="_blank" rel="noopener noreferrer">Dual coding theory and education</a>. <em>Educational Psychology Review</em>, 3(3), 149–210.</p>
+                        <p class="ref">Mayer, R. E. (2003). <a href="https://doi.org/10.1016/S0959-4752(02)00016-6" target="_blank" rel="noopener noreferrer">The promise of multimedia learning: Using the same instructional design methods across different media</a>. <em>Learning and Instruction</em>, 13(2), 125–139.</p>
+                        <p class="ref">Sweller, J. (1988). <a href="https://doi.org/10.1016/0010-0285(88)90023-7" target="_blank" rel="noopener noreferrer">Cognitive load during problem solving: Effects on learning</a>. <em>Cognitive Science</em>, 12(2), 257–285.</p>
+                        <p class="ref">Rowland, C. A. (2014). <a href="https://doi.org/10.1037/a0035669" target="_blank" rel="noopener noreferrer">The effect of testing versus restudy on retention: A meta-analytic review of the testing effect</a>. <em>Psychological Bulletin</em>, 140(6), 1432–1463.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Misfit Mafia</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="mailto:hello@misfitmafia.co">Support</a>
+            </div>
+            <p class="footer-meta">Nuri is made by <a href="index.html">Misfit Mafia, LLC</a> — a Texas limited liability company.<br>&copy; 2026 Misfit Mafia, LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
