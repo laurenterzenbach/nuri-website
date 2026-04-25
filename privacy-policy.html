@@ -67,7 +67,7 @@
         <a href="nuri.html" class="back-link">&larr; Back to Nuri</a>
 
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: April 18, 2026</p>
+        <p class="last-updated">Last updated: April 25, 2026</p>
 
         <p>Nuri ("the App") is an AI-powered language learning application published by <strong>Misfit Mafia, LLC</strong>, a Texas limited liability company ("we", "us", "our"). Your privacy is important to us. This policy explains what data the App collects, how it is used, and your choices.</p>
 
@@ -89,28 +89,43 @@
         </ul>
         <p>These services are governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
 
-        <h2>3. Microphone Access</h2>
+        <h2>3. Optional Feedback Reports</h2>
+        <p>The App includes two feedback entry points — <strong>Settings → Send Feedback</strong> and the <strong>"Report drill"</strong> flag on each grammar drill. Submitting feedback is entirely optional. When you submit feedback, the following is sent to our secure database (Google Firebase Firestore) so we can diagnose and fix the issue:</p>
+        <ul>
+            <li>The text you typed (your description, selected reason tags, and optional note).</li>
+            <li>For drill reports: the specific drill's prompt, expected answer, hint, rule title, and language — so we can reproduce the problem.</li>
+            <li>Your app version and build number, iOS version, and device model (e.g. "iPhone 15 Pro") — so we can tell whether a bug is release-specific or device-specific.</li>
+            <li>A randomly generated "install ID" (a UUID created on your device, stored only on your device and in submitted reports). This lets us group duplicate reports from the same device without identifying you. It is not tied to your Apple ID, phone number, email, or any other personal identifier.</li>
+            <li>A timestamp of when the report was submitted.</li>
+        </ul>
+        <p><strong>What is NOT sent:</strong> your flashcards, learning progress, XP, streaks, chat history, or any other content from the App. We do not collect your name, account identifiers, location, or advertising identifiers.</p>
+        <p><strong>Optional email.</strong> If you want a reply, you can opt in to attach your email address to a single feedback report. Email is never collected automatically and is only used to reply to the specific report you attached it to.</p>
+        <p><strong>Abuse protection.</strong> The App uses Apple's App Attest service (via Firebase App Check) to verify that feedback submissions are coming from a legitimate, untampered copy of the App. No personal information is shared with App Attest; it produces an anonymous attestation token.</p>
+        <p><strong>Opting out.</strong> You can turn off feedback sharing at any time in <strong>Settings → Privacy → Don't share feedback with developer</strong>. When opting out is enabled, no reports leave your device. Reports already submitted remain in our database; if you would like a specific report deleted, contact us using the email address below.</p>
+        <p>Feedback data is retained only for as long as needed to investigate the reported issue, with a hard retention ceiling of 18 months.</p>
+
+        <h2>4. Microphone Access</h2>
         <p>The App requests microphone access for speech recognition during speaking exercises and flashcard pronunciation practice. Audio is processed on-device using Apple's Speech framework. Audio recordings are not stored or transmitted to our servers.</p>
 
-        <h2>4. No Account Required</h2>
-        <p>The App does not require you to create an account, sign in, or provide any personal information such as your name, email address, or phone number.</p>
+        <h2>5. No Account Required</h2>
+        <p>The App does not require you to create an account, sign in, or provide any personal information such as your name, email address, or phone number. If you choose to include your email on a feedback report (see §3), that email is the only identifying information we hold, and only for the purpose of replying to that specific report.</p>
 
-        <h2>5. No Analytics or Tracking</h2>
-        <p>The App does not use any analytics frameworks, advertising SDKs, or tracking technologies. We do not collect usage statistics, device identifiers, or behavioral data. Firebase Analytics is explicitly disabled in the App's configuration.</p>
+        <h2>6. No Analytics or Tracking</h2>
+        <p>The App does not use any analytics frameworks, advertising SDKs, or tracking technologies. We do not collect usage statistics, behavioral data, or persistent device identifiers tied to your identity. The randomly generated install ID described in §3 is the only identifier we store on our servers, and it is only created when you choose to submit feedback. Firebase Analytics is explicitly disabled in the App's configuration.</p>
 
-        <h2>6. Subscriptions</h2>
+        <h2>7. Subscriptions</h2>
         <p>The App offers optional premium subscriptions managed entirely through Apple's App Store. Payment processing is handled by Apple. We do not have access to your payment information. For subscription management, visit <a href="https://apps.apple.com/account/subscriptions">Apple Subscription Settings</a>.</p>
 
-        <h2>7. Children's Privacy</h2>
-        <p>The App offers an optional <strong>Gamify</strong> experience (XP, badges, challenges) alongside a distraction-free <strong>Study</strong> mode. We do not knowingly collect personal information from children under 13. Since no account is required and no personal data is collected or stored on our servers, the App is designed to be safe for users of all ages. Text sent to AI services for content generation does not include any personally identifiable information.</p>
+        <h2>8. Children's Privacy</h2>
+        <p>The App offers an optional <strong>Gamify</strong> experience (XP, badges, challenges) alongside a distraction-free <strong>Study</strong> mode. We do not knowingly collect personal information from children under 13. Since no account is required and no personal data is collected or stored on our servers by default, the App is designed to be safe for users of all ages. Text sent to AI services for content generation does not include any personally identifiable information.</p>
 
-        <h2>8. Data Retention</h2>
-        <p>Since all learning data is stored locally on your device, you have full control over it. Deleting the App removes all data. We do not retain any data on remote servers.</p>
+        <h2>9. Data Retention</h2>
+        <p>Learning data stays on your device, under your control — deleting the App removes it. Feedback reports you submit under §3 are retained for as long as needed to investigate the reported issue, up to a maximum of 18 months, after which they are deleted.</p>
 
-        <h2>9. Changes to This Policy</h2>
+        <h2>10. Changes to This Policy</h2>
         <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
 
-        <h2>10. Contact Us</h2>
+        <h2>11. Contact Us</h2>
         <p>If you have questions about this privacy policy, please contact us at <a href="mailto:hello@misfitmafia.co">hello@misfitmafia.co</a>.</p>
 
         <p>Misfit Mafia, LLC<br>A Texas limited liability company<br><a href="index.html">misfitmafia.co</a></p>
